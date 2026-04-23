@@ -1,8 +1,18 @@
 "use client";
 import { useMemo, useState } from "react";
 
-function Card({ children, className = "" }) {
-  return <div className={`rounded-3xl border border-zinc-800 bg-zinc-900/60 ${className}`}>{children}</div>;
+function Card({
+  children,
+  className = "",
+}: {
+  children: any;
+  className?: string;
+}) {
+  return (
+    <div className={`rounded-3xl border border-zinc-800 bg-zinc-900/60 ${className}`}>
+      {children}
+    </div>
+  );
 }
 
 function InputField({ label, placeholder, value, onChange, hint }) {
