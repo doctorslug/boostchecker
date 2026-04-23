@@ -15,7 +15,19 @@ function Card({
   );
 }
 
-function InputField({ label, placeholder, value, onChange, hint }) {
+function InputField({
+  label,
+  placeholder,
+  value,
+  onChange,
+  hint,
+}: {
+  label: any;
+  placeholder: any;
+  value: any;
+  onChange: any;
+  hint?: any;
+}) {
   return (
     <label className="block">
       <div className="mb-2 text-sm font-medium text-zinc-300">{label}</div>
