@@ -1847,6 +1847,28 @@ function MatchedCalculator({ type }) {
   );
 }
 
+function PricingShell({ title, subtitle, children, result }) {
+  return (
+    <div className="grid gap-6 xl:grid-cols-[1.05fr_0.95fr]">
+      <Card className="p-6 sm:p-7">
+        <h2 className="text-2xl font-bold text-white">{title}</h2>
+        <p className="mt-2 text-sm leading-7 text-zinc-400">{subtitle}</p>
+        <div className="mt-7">{children}</div>
+      </Card>
+      <Card className="p-6 sm:p-7">
+        <div className="mb-6 flex items-center justify-between">
+          <div>
+            <div className="text-sm font-medium text-zinc-400">Results</div>
+            <div className="mt-1 text-2xl font-bold text-white">Model output</div>
+          </div>
+          <div className="rounded-2xl bg-emerald-400/10 px-3 py-1 text-sm font-semibold text-emerald-300">Live calc</div>
+        </div>
+        {result}
+      </Card>
+    </div>
+  );
+}
+
 function PricingToolsPlaceholder() {
   const [active, setActive] = useState("team-first");
 
@@ -2016,25 +2038,6 @@ function PricingToolsPlaceholder() {
     if (key === "xyz") setXyz({ odds1: "", odds2: "", odds3: "", odds4: "", odds5: "", bookie: "" });
   };
 
-  const PricingShell = ({ title, subtitle, children, result }) => (
-    <div className="grid gap-6 xl:grid-cols-[1.05fr_0.95fr]">
-      <Card className="p-6 sm:p-7">
-        <h2 className="text-2xl font-bold text-white">{title}</h2>
-        <p className="mt-2 text-sm leading-7 text-zinc-400">{subtitle}</p>
-        <div className="mt-7">{children}</div>
-      </Card>
-      <Card className="p-6 sm:p-7">
-        <div className="mb-6 flex items-center justify-between">
-          <div>
-            <div className="text-sm font-medium text-zinc-400">Results</div>
-            <div className="mt-1 text-2xl font-bold text-white">Model output</div>
-          </div>
-          <div className="rounded-2xl bg-emerald-400/10 px-3 py-1 text-sm font-semibold text-emerald-300">Live calc</div>
-        </div>
-        {result}
-      </Card>
-    </div>
-  );
 
   return (
     <>
